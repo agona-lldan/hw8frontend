@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+связанный репозиторий - [hw8backend](https://github.com/agona-lldan/hw8backend)
 
-## Getting Started
+## Задание
 
-First, run the development server:
+- сверстать приложение ✅
+- создать компоненты ✅
+- связь с API ✅
+- корректное отображение погоды ✅
+- поиск по городам ✅
+- debounce ✅
+- eslint и prettier ✅
+- кэширование 🅱️
+  - Tanstack я посмотрел, но куда его в моем приложении я не придумал
+  - Но я добавил кэширование на бэкенде
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Как запустить
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> приложение никуда не заливал, потому что написал бэкенд, а он никуда нормально не заливается
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Устанавливаем [Bun](https://bun.sh/docs)
+   - `curl -fsSL https://bun.sh/install | bash` - macos
+   - на windows не знаю как
+2. Нужно склонировать себе два репозитория:
+   - [hw8frontend](https://github.com/agona-lldan/hw8frontend)
+   - [hw8backend](https://github.com/agona-lldan/hw8backend) - весит много, поэтому надо будет чуть подождать
+3. Для hw8frontend там обычный next, поэтому `yarn` и `yarn dev`
+4. Для hw8backend там идет Bun, поэтому `bun install` и `bun run dev`
+5. После запуска всех серверов, можно проверять работу приложения
+   - бэкенд работает на `localhost:5252`
+   - фронтенд работает на `localhost:3000`
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+если ничего не заведется - [тг](https://t.me/lld4n)
 
-## Learn More
+## Технологии
 
-To learn more about Next.js, take a look at the following resources:
+### Backend
+- `Bun` - как Node.js, но быстрее
+- `Elysia` - как Express.js, но на Bun и быстрее
+- `Fuse` - для неточного поиска
+- `ky` - запросы туда-сюда
+- `uuid` - генерация айдишника
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Frontend
+- `Next` - бедолага
+- `ldrs` - совсем обленились, даже [анимацию загрузки](https://uiball.com/ldrs/) сами написать не могут
+- `lucide` - иконки svg в виде компонентов
+- `ky` - туда-сюда запросы
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 52
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Вообще в идеале использовать какие-нибудь нормальные структуры данных (хотя бы СУБД), но так как надо как-то сдать вам работу, то пришлось изворачиваться обычными JSON файлами
